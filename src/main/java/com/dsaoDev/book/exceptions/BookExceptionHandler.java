@@ -7,21 +7,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.dsaoDev.book.exceptions.error.StandardError;
+import com.dsaoDev.book.exceptions.error.ErrorDescription;
 
 import jakarta.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
 public class BookExceptionHandler {
-	
-	@ExceptionHandler(DataToLargeException.class)
-	public ResponseEntity<StandardError> dataToLarge(DataToLargeException e, HttpServletRequest request){
-		StandardError erro = new StandardError();
+	//Tratamento de erro settando a toda descricao para a Exception(x)
+	@ExceptionHandler(BookNotFoundException.class)
+	public ResponseEntity<ErrorDescription> entityNotFoundTreatment(BookNotFoundException ex,
+			HttpServletRequest request) {
+		ErrorDescription erro = new ErrorDescription();
 		erro.setTimestamp(Instant.now());
-		erro.setStatus(HttpStatus.PAYLOAD_TOO_LARGE.value());
-		erro.setError("Data too large");
-		erro.setMessage(e.getMessage());
+		erro.setStatus(HttpStatus.NOT_FOUND.value());
+		erro.setError("Resource not found");
+		erro.setMessage(ex.getMessage());
 		erro.setPath(request.getRequestURI());
-		return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body(erro);
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro);
 	}
 }

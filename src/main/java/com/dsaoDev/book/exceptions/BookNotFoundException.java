@@ -1,10 +1,10 @@
 package com.dsaoDev.book.exceptions;
 
-public class DataToLargeException extends RuntimeException {
+public class BookNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
-	
-	public DataToLargeException(String message) {
+
+	public BookNotFoundException(String message) {
 		super(message);
 	}
 

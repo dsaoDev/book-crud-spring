@@ -11,8 +11,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class StandardError {
-	
+public class ErrorDescription {
+
 	private Instant timestamp;
 	private Integer status;
 	private String error;

@@ -1,28 +1,21 @@
 package com.dsaoDev.book.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-import com.dsaoDev.book.dto.BookDTO;
+import com.dsaoDev.book.dto.BookResponseDTO;
+import com.dsaoDev.book.dto.BookRequestDTO;
 import com.dsaoDev.book.entity.Book;
-import com.dsaoDev.book.repository.BookRepository;
-import com.dsaoDev.book.util.BookUtility;
 
-@Service
-public class BookService {
-	
-	@Autowired
-	private BookRepository bookRepository;
-	
-	@Autowired
-	private BookUtility bookUtil;
-	
-	public BookDTO save(Book book) {
-			bookUtil.checkIsbnSize(book);
-			
-			bookRepository.save(book);
-			
-			return new BookDTO(book);
-			
-	}
+public interface BookService {
+
+	BookResponseDTO save(Book book);
+
+	List<BookResponseDTO> findAll();
+
+	BookResponseDTO findById(Long id);
+
+	BookResponseDTO update(BookRequestDTO bookDTO, Long id);
+
+	String deleteById(Long id);
+
 }
