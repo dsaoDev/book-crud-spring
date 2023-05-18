@@ -14,7 +14,7 @@ public class BookRequestDTO {
 	@NotBlank(message = "book title shouldn't be blank")
 	private String title;
 
-	@ISBN(message = "invalid ISBN, a valid ISBN contains 13 Digits")
+	@ISBN(message = "invalid ISBN, a valid ISBN contains 13 Digits excluding the hifens")
 	@NotBlank(message = "ISBN shouldn't be blank")
 	private String isbn;
 
