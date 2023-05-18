@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dsaoDev.book.dto.BookRequestDTO;
 import com.dsaoDev.book.dto.BookResponseDTO;
-import com.dsaoDev.book.entity.Book;
 import com.dsaoDev.book.service.BookService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/book")
@@ -27,8 +28,8 @@ public class BookController {
 	BookService bookService;
 
 	@PostMapping
-	public ResponseEntity<BookResponseDTO> save(@RequestBody Book book) {
-		return new ResponseEntity<BookResponseDTO>(bookService.save(book), HttpStatus.CREATED);
+	public ResponseEntity<BookResponseDTO> save(@Valid @RequestBody BookRequestDTO bookDTO) {
+		return new ResponseEntity<BookResponseDTO>(bookService.save(bookDTO), HttpStatus.CREATED);
 	}
 
 	@GetMapping
@@ -42,7 +43,7 @@ public class BookController {
 	}
 
 	@PutMapping(path = "/{id}")
-	public ResponseEntity<BookResponseDTO> update(@RequestBody BookRequestDTO bookRequestDTO,
+	public ResponseEntity<BookResponseDTO> update(@Valid @RequestBody BookRequestDTO bookRequestDTO,
 			@PathVariable(name = "id") Long id) {
 		return ResponseEntity.ok(bookService.update(bookRequestDTO, id));
 	}

@@ -17,6 +17,14 @@ public class BookMapper {
 	public BookResponseDTO convertToDTO(Book book) {
 		return new BookResponseDTO(book);
 	}
+	
+	public Book convertToBook(BookRequestDTO bookDTO) {
+		return Book.builder()
+				.title(bookDTO.getTitle())
+				.autor(bookDTO.getAutor())
+				.isbn(bookDTO.getIsbn())
+				.build();
+	}
 
 	// Conversão e aplicação do map para converter os Books em BookDTO depois
 	// retorna de stream para list;

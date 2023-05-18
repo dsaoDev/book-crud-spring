@@ -2,13 +2,12 @@ package com.dsaoDev.book.service;
 
 import java.util.List;
 
-import com.dsaoDev.book.dto.BookResponseDTO;
 import com.dsaoDev.book.dto.BookRequestDTO;
-import com.dsaoDev.book.entity.Book;
+import com.dsaoDev.book.dto.BookResponseDTO;
 
 public interface BookService {
 
-	BookResponseDTO save(Book book);
+	BookResponseDTO save(BookRequestDTO bookDTO);
 
 	List<BookResponseDTO> findAll();
 
