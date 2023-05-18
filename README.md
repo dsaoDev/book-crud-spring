@@ -62,9 +62,9 @@ Git e GitHub - Utilizados para commitar o projeto e subir o código para a nuvem
 ## Como Executar o Projeto
 ### Pré Requisitos: JAVA 17 e MySQL database
 
-```bash
+```git
 # clonar repositorio
-git clone https://github.com/dsaoDev/book-spring.git
+git clone https://github.com/dsaoDev/book-crud-spring.git
 
 # entrar na pasta do projeto
 cd book-crud-spring
