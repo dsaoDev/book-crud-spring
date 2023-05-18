@@ -65,7 +65,7 @@ Git e GitHub - Utilizados para commitar o projeto e subir o código para a nuvem
 git clone https://github.com/dsaoDev/book-spring.git
 
 # entrar na pasta do projeto
-cd book-spring
+cd book-crud-spring
 
 # executar o projeto
 ./mvnw spring-boot:run
