@@ -24,7 +24,7 @@ Essa é uma aplicação de CRUD básico em que consiste em manipular dados no ba
   
 ## Tecnologias Utilizadas
 
-Back end:
+Back end
 
 - Java :heavy_check_mark:
 
@@ -46,7 +46,7 @@ LomBok -> Utilizado para evitar muitas linhas de código através de annotations
 
 MySQL Connector -> Utilizado para se connectar ao Banco de Dados MySQL
 
-## Programas Utilizados :
+## Programas Utilizados
 Postman - Utilizado para fazer as requisições (CONSUMIR) a aplicação.
 
 STS- IDE escolhida para desenvolver o projeto.
