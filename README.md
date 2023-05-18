@@ -1,10 +1,10 @@
 # CRUD de Livros
 
-## O QUE É A APLICAÇÃO :
+## O que é a Aplicação
 
 Essa é uma aplicação de CRUD básico em que consiste em manipular dados no banco através da entidade Book.
 
-##	FUNCIONALIDADES :
+##	Funcionalidades
 
 - Encontra um Livro registrado no sistema por ID.
 
@@ -16,13 +16,13 @@ Essa é uma aplicação de CRUD básico em que consiste em manipular dados no ba
 
 - Deleta um Livro do sistema.
 
-## VERSIONAMENTO: 
+## Versionamento 
 
   Versão do Java: 17
 
   Versão do Spring Boot: 3.0.6
   
-## TECNOLOGIAS UTILIZADAS :
+## Tecnologias Utilizadas
 
 Back end:
 
@@ -36,7 +36,7 @@ Back end:
 
 ![book schema](https://github.com/dsaoDev/book-spring/assets/129787872/42575cbc-094e-4601-a41e-2bac8124cd79)
 
-## DEPENDENCIAS DO MAVEN :
+## Dependencias do Maven
 
 Data JPA - > Utilizando o JPA para fazer a ponte entre o banco de dados e a aplicação -> ORM
 
@@ -57,15 +57,15 @@ MySQL WorkBench - Plataforma utilizada para fazer a manipulação e a leitura do
 
 Git e GitHub - Utilizados para commitar o projeto e subir o código para a nuvem(remoto). 
 
-## COMO EXECUTAR O PROJETO
-### PRÉ-REQUISITOS: JAVA 17
+## Como Executar o Projeto
+### Pré Requisitos: JAVA 17 e MySQL database
 
 ```bash
 # clonar repositorio
-git clone 
+git clone https://github.com/dsaoDev/book-spring.git
 
 # entrar na pasta do projeto
-cd crud-spring-main
+cd book-spring
 
 # executar o projeto
 ./mvnw spring-boot:run
