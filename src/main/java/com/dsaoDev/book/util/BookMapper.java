@@ -5,9 +5,10 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import com.dsaoDev.book.dto.BookResponseDTO;
 import com.dsaoDev.book.dto.BookRequestDTO;
+import com.dsaoDev.book.dto.BookResponseDTO;
 import com.dsaoDev.book.entity.Book;
+import com.dsaoDev.book.exceptions.EmptyListException;
 
 @Component
 public class BookMapper {
@@ -28,5 +29,13 @@ public class BookMapper {
 		book.setIsbn(bookDTO.getIsbn());
 		book.setTitle(bookDTO.getTitle());
 	}
-
+	
+	public List<Book> checkIfListIsEmpty (List<Book> list) {
+		if(list.isEmpty()) {
+			throw new EmptyListException("at the moment the list you requested is empty");
+		}else {
+			return list;
+		}
+	}
 }
+

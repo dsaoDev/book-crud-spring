@@ -13,16 +13,33 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
 public class BookExceptionHandler {
+	
 	//Tratamento de erro settando a toda descricao para a Exception(x)
+	
 	@ExceptionHandler(BookNotFoundException.class)
 	public ResponseEntity<ErrorDescription> entityNotFoundTreatment(BookNotFoundException ex,
 			HttpServletRequest request) {
 		ErrorDescription erro = new ErrorDescription();
 		erro.setTimestamp(Instant.now());
 		erro.setStatus(HttpStatus.NOT_FOUND.value());
-		erro.setError("Resource not found");
+		erro.setError("Entity not found");
 		erro.setMessage(ex.getMessage());
 		erro.setPath(request.getRequestURI());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro);
 	}
+	
+	@ExceptionHandler(EmptyListException.class)
+	public ResponseEntity<ErrorDescription> emptyListTreatment(EmptyListException elException,
+			HttpServletRequest request) {
+		ErrorDescription erro = new ErrorDescription();
+		erro.setTimestamp(Instant.now());
+		erro.setStatus(HttpStatus.NOT_FOUND.value());
+		erro.setError("Empty list");
+		erro.setMessage(elException.getMessage());
+		erro.setPath(request.getRequestURI());
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro);
+	}
+	
+	
+	
 }

@@ -20,22 +20,22 @@ public class BookServiceImpl implements BookService {
 
 	@Autowired
 	private BookMapper bookMapper;
-
+	//fazer validacao
 	@Override
 	public BookResponseDTO save(Book book) {
 		return bookMapper.convertToDTO(bookRepository.save(book));
 	}
-
+	//tratado
 	@Override
 	public List<BookResponseDTO> findAll() {
-		return bookMapper.listConverter(bookRepository.findAll());
+		return bookMapper.listConverter(bookMapper.checkIfListIsEmpty(bookRepository.findAll()));
 	}
-
+	//tratado
 	@Override
 	public BookResponseDTO findById(Long id) {
 		return bookMapper.convertToDTO(returnBook(id));
 	}
-
+	//tratado falta validacao
 	@Override
 	public BookResponseDTO update(BookRequestDTO bookDTO, Long id) {
 		Book book = returnBook(id);
@@ -43,10 +43,12 @@ public class BookServiceImpl implements BookService {
 		return bookMapper.convertToDTO(bookRepository.save(book));
 	}
 
+	//tratado
 	@Override
 	public String deleteById(Long id) {
-		bookRepository.deleteById(id);
-		return "Book id: " + id + " Deleted";
+		Book book = returnBook(id);
+		bookRepository.deleteById(book.getId());
+		return "Book which ID is " + id + " was deleted with Success";
 	}
 
 	// Re-uso do FindById
