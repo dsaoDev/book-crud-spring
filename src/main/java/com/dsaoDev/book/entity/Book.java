@@ -21,7 +21,6 @@ public class Book {
 	@Setter(value = AccessLevel.NONE)
 	private Long id;
 
-	
 	@Column(nullable = false, length = 50)
 	private String autor;
 
