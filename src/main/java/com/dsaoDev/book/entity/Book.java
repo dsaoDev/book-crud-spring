@@ -21,13 +21,13 @@ public class Book {
 	@Setter(value = AccessLevel.NONE)
 	private Long id;
 
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false)
 	private String autor;
 
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false)
 	private String title;
 
-	@Column(nullable = false, length = 17, unique = true)
+	@Column(nullable = false, unique = true)
 	private String isbn;
 
 	@Builder
