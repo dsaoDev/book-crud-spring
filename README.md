@@ -44,7 +44,7 @@ Spring Web -> É uma aplicação WEB, Utilizado para receber requisições, devo
 
 LomBok -> Utilizado para evitar muitas linhas de código através de annotations.
 
-Spring Validation -> Dependência utilizada para validação dos atributos (ISBN,title,autor)
+Spring Validation -> Dependência utilizada para validação dos atributos (ISBN,title,author)
 
 MySQL Connector -> Utilizado para se connectar ao Banco de Dados MySQL
 
